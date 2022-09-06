@@ -1,0 +1,23 @@
+<div id="calendar" style="background-color: azure">
+  <ngx-masonry
+    [options]="masonryOptions"
+    id="masonry-calendar"
+    [ordered]="true"
+  >
+    <div
+      ngxMasonryItem
+      class="masonry-item"
+      style="margin: 1rem"
+      *ngFor="let gift of gifts"
+    >
+      <div
+        class="d-flex justify-content-center"
+        data-bs-toggle="modal"
+        data-bs-target="#GalleryModal"
+      >
+        <!-- <img src="{{backendpath}}/img/{{image._id}}_small" class="img-fluid img-thumbnail" style="width: 100%; min-height:100px; max-height: 1000px; object-fit: cover;"> -->
+        <app-calendar-door [content]="gift"></app-calendar-door>
+      </div>
+    </div>
+  </ngx-masonry>
+</div>

@@ -2,7 +2,17 @@
   <h1>Christinas Adventskalender</h1>
 </header>
 
-<main></main>
+<div id="main">
+  <div *ngIf="!this.loginEvent.getValue()" class="row align-items-center p-3">
+    <div class="col-4 offset-4">
+      <app-login (onLogin)="handleLogin($event)"></app-login>
+    </div>
+  </div>
+
+  <div id="calendar" *ngIf="this.loginEvent.getValue()">
+    <app-calendar-gallery></app-calendar-gallery>
+  </div>
+</div>
 
 <footer>Christinas Adventskalender</footer>
 

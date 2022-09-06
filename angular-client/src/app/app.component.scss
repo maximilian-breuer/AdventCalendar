@@ -1,18 +1,18 @@
 @use "../utilities/variables";
 
 header {
-  width: 100%;
   background-color: variables.$christmasRed;
   text-align: center;
-  border-radius: 1rem;
+  border-radius: 2rem;
+  margin: 1rem;
 }
 
 h1 {
   margin: 0;
+  font-weight: bold;
 }
 
 footer {
-  /* width: 40%; */
   font-weight: bold;
   background-color: variables.$christmasRed;
   position: fixed;
@@ -20,4 +20,15 @@ footer {
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 1rem;
+}
+
+#main {
+  height: 85%;
+  width: 90%;
+  margin-left: 5%;
+}
+
+#calendar {
+  height: 100%;
+  width: 100%;
 }
