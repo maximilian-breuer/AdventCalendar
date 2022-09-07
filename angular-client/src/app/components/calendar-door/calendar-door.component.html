@@ -1,4 +1,8 @@
-<div id="door" [style.width]="content.width" [style.height]="content.height">
+<div
+  id="door"
+  [style.width.em]="content.width"
+  [style.height.em]="content.height"
+>
   <label>
     <input type="checkbox" />
     <div class="front">{{ content.day }}</div>

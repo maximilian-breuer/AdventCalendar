@@ -22,9 +22,10 @@ export class CalendarGalleryComponent implements OnInit {
         day: i,
         content: `Hi ${i}`,
         caption: `Cap ${i}`,
-        width: 200,
-        height: 200,
+        width: 10,
+        height: 10,
       });
     }
+    this.gifts[3].width = 20;
   }
 }

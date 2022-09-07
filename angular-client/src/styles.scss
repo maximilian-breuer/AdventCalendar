@@ -1,13 +1,17 @@
 html {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 98%;
+  margin:0;
+  padding: 0;
   background-image: url(/assets/Hintergrundbild.png);
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: cover;
 }
 
