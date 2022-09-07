@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxMasonryOptions } from 'ngx-masonry';
-import { Gift } from 'src/assets/interfaces';
+import { gifts } from 'src/assets/assets';
 
 @Component({
   selector: 'app-calendar-gallery',
@@ -8,7 +8,7 @@ import { Gift } from 'src/assets/interfaces';
   styleUrls: ['./calendar-gallery.component.scss'],
 })
 export class CalendarGalleryComponent implements OnInit {
-  gifts: Gift[] = [];
+  gifts = gifts;
 
   public masonryOptions: NgxMasonryOptions = {
     gutter: 0,
@@ -16,16 +16,5 @@ export class CalendarGalleryComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    for (let i = 1; i <= 24; i++) {
-      this.gifts.push({
-        day: i,
-        content: `Hi ${i}`,
-        caption: `Cap ${i}`,
-        width: 10,
-        height: 10,
-      });
-    }
-    this.gifts[3].width = 20;
-  }
+  ngOnInit(): void {}
 }
