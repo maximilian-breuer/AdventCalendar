@@ -11,6 +11,7 @@ import { CalendarGalleryComponent } from './components/calendar-gallery/calendar
 import { NgxMasonryModule } from 'ngx-masonry';
 import { ContentViewComponent } from './components/calendar-door/content-view/content-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SnowFlakeComponent } from './snow-flake.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CalendarDoorComponent,
     CalendarGalleryComponent,
     ContentViewComponent,
+    SnowFlakeComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,4 +18,15 @@
   <footer>Christinas Adventskalender</footer>
 </div>
 
+<div>
+  <ng-template ngFor let-config [ngForOf]="snowFlakes">
+    <snow-flake
+      [depth]="config.depth"
+      [speed]="config.speed"
+      [startLeft]="config.left"
+      [startTop]="config.top"
+    ></snow-flake>
+  </ng-template>
+</div>
+
 <router-outlet></router-outlet>
