@@ -2,10 +2,54 @@
   id="door"
   [style.width.em]="content.width"
   [style.height.em]="content.height"
+  data-bs-toggle="modal"
+  data-bs-target="#contentModal"
+  [className]="open ? 'open' : 'closed'"
 >
   <label>
-    <input type="checkbox" />
+    <input class="customIn" type="checkbox" (click)="openDoor(contentModal)" />
     <div class="front">{{ content.day }}</div>
     <div class="back"></div>
   </label>
 </div>
+
+<ng-template #contentModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Tag {{ content.day }}</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col">
+        <img
+          alt="item"
+          src="{{ $any(content.content).url }}"
+          style="width: 100%; height: auto"
+          *ngIf="isContentImage(content.content)"
+        />
+        <div *ngIf="!isContentImage(content.content)">
+          {{ content.content }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col bg-primary text-white rounded mx-3 mt-2">
+        {{ content.caption }}
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Schließen
+    </button>
+  </div>
+</ng-template>

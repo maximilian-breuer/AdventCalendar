@@ -11,6 +11,9 @@
             formControlName="password"
             placeholder="Passwort"
           />
+          <span *ngIf="displayError" style="font-size: x-small; color: red"
+            >Bitte richtiges Passwort eingeben</span
+          >
         </div>
       </div>
       <button class="btn btn-primary" type="submit">Login</button>

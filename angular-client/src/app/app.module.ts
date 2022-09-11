@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarDoorComponent } from './components/calendar-door/calendar-door.component';
 import { CalendarGalleryComponent } from './components/calendar-gallery/calendar-gallery.component';
 import { NgxMasonryModule } from 'ngx-masonry';
+import { ContentViewComponent } from './components/calendar-door/content-view/content-view.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     LoginComponent,
     CalendarDoorComponent,
     CalendarGalleryComponent,
+    ContentViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { NgxMasonryModule } from 'ngx-masonry';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     NgxMasonryModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

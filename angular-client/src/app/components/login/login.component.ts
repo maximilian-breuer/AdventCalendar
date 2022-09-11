@@ -9,31 +9,23 @@ import { loginInformation as LoginInformation } from '../../../assets/assets';
 })
 export class LoginComponent implements OnInit {
   loginForm = this.formBuilder.group({ password: '' });
+  displayError = false;
 
   @Output() onLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {
-    // (document.querySelector('html') as HTMLElement).style.filter = 'blur(8px)';
-    // (document.querySelector('#main') as HTMLElement).style.filter = 'blur(0px)';
-  }
+  ngOnInit(): void {}
 
   onSubmit(): void {
-    // login if password is correct
-    if (this.loginForm.invalid) return;
-
+    // login if password is correct, otherwise display error
     if (
       this.loginForm.controls['password'].value == LoginInformation.password
     ) {
+      this.loginForm.reset();
       this.onLogin.emit(true);
+    } else {
+      this.displayError = true;
     }
-  }
-
-  login(): void {
-    // remove bluring
-    (document.querySelector('html') as HTMLElement).style.filter = 'blur(0px)';
-    // reset login variable
-    // TODO
   }
 }

@@ -1,4 +1,4 @@
-import { Gift } from './interfaces';
+import { ContentImage, Gift } from './interfaces';
 
 export const loginInformation = {
   password: 'Christina',
@@ -9,8 +9,11 @@ export const gifts: Gift[] = [];
 
 gifts[0] = {
   day: 1,
-  content: `Placeholder 1`,
-  caption: `Caption 1`,
+  content: new ContentImage(
+    './../../../assets/calendar-images/Hintergrundbild.png'
+  ),
+  caption:
+    'Schau mal in die Kiste auf dem Schrank (siehe Bild). Die heutige Ueberraschung befindet sich dort drinn. Viel Spass damit und einen schoenen Tag!',
   width: 10,
   height: 10,
 };

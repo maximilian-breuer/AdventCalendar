@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgxMasonryOptions } from 'ngx-masonry';
 import { gifts } from 'src/assets/assets';
 
 @Component({
@@ -9,10 +8,6 @@ import { gifts } from 'src/assets/assets';
 })
 export class CalendarGalleryComponent implements OnInit {
   gifts = gifts;
-
-  public masonryOptions: NgxMasonryOptions = {
-    gutter: 0,
-  };
 
   constructor() {}
 
