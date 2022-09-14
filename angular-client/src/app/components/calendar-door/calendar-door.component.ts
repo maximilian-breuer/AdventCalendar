@@ -22,9 +22,7 @@ export class CalendarDoorComponent implements OnInit {
       this.modalService
         .open(contentModal, { ariaLabelledBy: 'modal-basic-title', size: 'lg' })
         .result.then(
-          (result) => {
-            console.log('close');
-          },
+          (result) => {},
           (reason) => {}
         );
   }

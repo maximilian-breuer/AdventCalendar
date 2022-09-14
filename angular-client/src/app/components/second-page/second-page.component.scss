@@ -1,0 +1,14 @@
+@use "../../../utilities/variables";
+
+#credits {
+  background-color: variables.$christmasRed;
+  border-radius: 1rem;
+  text-align: center;
+  border: 3px solid black;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.8);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

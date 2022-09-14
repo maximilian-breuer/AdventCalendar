@@ -18,7 +18,9 @@
   background-color: variables.$christmasRed;
 }
 
-
+.front {
+  user-select: none;
+}
 
 label {
   display: flex;

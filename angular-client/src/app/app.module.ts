@@ -12,6 +12,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { ContentViewComponent } from './components/calendar-door/content-view/content-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SnowFlakeComponent } from './snow-flake.component';
+import { SecondPageComponent } from './components/second-page/second-page.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { SnowFlakeComponent } from './snow-flake.component';
     CalendarGalleryComponent,
     ContentViewComponent,
     SnowFlakeComponent,
+    SecondPageComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,

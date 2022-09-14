@@ -9,11 +9,11 @@ interface SnowFlakeConfig {
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-main-page',
+  templateUrl: './main-page.component.html',
+  styleUrls: ['./main-page.component.scss'],
 })
-export class AppComponent {
+export class MainPageComponent {
   title = 'Christinas Adventskalender';
   mobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -38,19 +38,13 @@ export class AppComponent {
 
     window.addEventListener('resize', (event) => {
       if (window.innerWidth == screen.width) {
-        this.snowFlakes = [];
-        for (var i = 1; i <= 150; i++) {
-          this.snowFlakes.push({
-            depth: this.randRange(1, 5),
-            left: this.randRange(0, 97),
-            speed: this.randRange(1, 5),
-            top: 0,
-          });
-        }
+        window.scrollTo(0, 0);
       }
     });
 
     window.addEventListener('scroll', (event) => {
+      console.log('hkjlfdslk');
+
       // if completely scrolled up on desktop
       if (window.scrollY == 0 && window.innerWidth >= 1900) {
         this.snowFlakes = [];
