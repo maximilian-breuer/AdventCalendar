@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { loginInformation as LoginInformation } from '../../../assets/assets';
+import { loginInformation as LoginInformation } from '../../../../assets/assets';
 
 @Component({
   selector: 'app-login',
