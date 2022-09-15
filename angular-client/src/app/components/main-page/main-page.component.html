@@ -17,12 +17,14 @@
 
   <footer>
     <a
-      *ngIf="this.loginEvent.getValue()"
+      *ngIf="this.loginEvent.getValue() && !this.mobile"
       routerLink="/credits"
       routerLinkActive="active"
       >Christinas Adventskalender</a
     >
-    <div *ngIf="!this.loginEvent.getValue()">Christinas Adventskalender</div>
+    <div *ngIf="!this.loginEvent.getValue() || this.mobile">
+      Christinas Adventskalender
+    </div>
   </footer>
 </div>
 

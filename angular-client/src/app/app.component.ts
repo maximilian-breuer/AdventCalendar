@@ -41,7 +41,7 @@ export class AppComponent {
       if (evt instanceof NavigationStart) {
         this.snowFlakes = [];
 
-        for (var i = 1; i <= 150; i++) {
+        for (var i = 0; i < this.getNumberOfFlakes(); i++) {
           this.snowFlakes.push({
             depth: this.randRange(1, 5),
             left:
@@ -66,7 +66,7 @@ export class AppComponent {
 
     this.snowFlakes = [];
 
-    for (var i = 1; i <= 150; i++) {
+    for (var i = 0; i < this.getNumberOfFlakes(); i++) {
       this.snowFlakes.push({
         depth: this.randRange(1, 5),
         left: this.mobile ? this.randRange(0, 90) : this.randRange(0, 97),
@@ -79,7 +79,7 @@ export class AppComponent {
     window.addEventListener('resize', (event) => {
       if (window.innerWidth == screen.width) {
         this.snowFlakes = [];
-        for (var i = 1; i <= 150; i++) {
+        for (var i = 0; i < this.getNumberOfFlakes(); i++) {
           this.snowFlakes.push({
             depth: this.randRange(1, 5),
             left: this.randRange(0, 97),
@@ -95,7 +95,7 @@ export class AppComponent {
       // if completely scrolled up on desktop
       if (window.scrollY == 0 && window.innerWidth >= 1900) {
         this.snowFlakes = [];
-        for (var i = 1; i <= 150; i++) {
+        for (var i = 0; i < this.getNumberOfFlakes(); i++) {
           this.snowFlakes.push({
             depth: this.randRange(1, 5),
             left: this.randRange(0, 97),
@@ -127,9 +127,6 @@ export class AppComponent {
       if (this.snowCustomConfig.fastSpeed != data.fastSpeed) {
         this.snowCustomConfig.fastSpeed = data.fastSpeed;
         if (this.snowCustomConfig.fastSpeed) {
-          for (var i = 0; i < this.snowFlakes.length; i++) {
-            this.snowFlakes[i].speed = 6;
-          }
           for (var i = 1; i <= 400; i++) {
             this.snowFlakes.push({
               depth: this.randRange(1, 5),
@@ -139,6 +136,10 @@ export class AppComponent {
               color: this.snowCustomConfig.snowColor,
             });
           }
+          for (var i = 0; i < this.getNumberOfFlakes(); i++) {
+            this.snowFlakes[i].speed = 6;
+          }
+          console.log('jklf');
         } else {
           for (var i = 0; i < 150; i++) {
             this.snowFlakes[i].speed = this.randRange(1, 5);
@@ -164,5 +165,9 @@ export class AppComponent {
     var range = max - min;
 
     return min + Math.round(Math.random() * range);
+  }
+
+  private getNumberOfFlakes(): number {
+    return this.snowCustomConfig.fastSpeed ? 550 : 150;
   }
 }
