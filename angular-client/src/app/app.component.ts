@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 import { SnowflakeService } from './services/snowflake.service';
 
 export interface SnowFlakeConfig {
@@ -32,7 +33,41 @@ export class AppComponent {
 
   public snowFlakes: SnowFlakeConfig[];
 
-  constructor(private snowflakeService: SnowflakeService) {
+  constructor(
+    private snowflakeService: SnowflakeService,
+    private router: Router
+  ) {
+    router.events.subscribe((evt) => {
+      if (evt instanceof NavigationStart) {
+        // setTimeout(() => {
+        //   console.log('scroolll');
+        //   window.scrollTo(0, 0);
+        // }, 1000);
+        // document.querySelector('secondPage')!.scrollTop = 0;
+        this.snowFlakes = [];
+
+        for (var i = 1; i <= 150; i++) {
+          this.snowFlakes.push({
+            depth: this.randRange(1, 5),
+            left:
+              this.mobile || window.innerWidth < 1900
+                ? this.randRange(0, 90)
+                : this.randRange(0, 97),
+            speed: this.snowCustomConfig.fastSpeed ? 6 : this.randRange(1, 5),
+            top: 0,
+            color: this.snowCustomConfig.snowColor,
+          });
+        }
+      }
+    });
+
+    this.snowCustomConfig.fastSpeed = this.snowflakeService
+      .getData()
+      .getValue().fastSpeed;
+    this.snowCustomConfig.snowColor = this.snowflakeService
+      .getData()
+      .getValue().snowColor;
+
     this.snowFlakes = [];
 
     for (var i = 1; i <= 150; i++) {
@@ -99,7 +134,7 @@ export class AppComponent {
           for (var i = 0; i < this.snowFlakes.length; i++) {
             this.snowFlakes[i].speed = 6;
           }
-          for (var i = 1; i <= 100; i++) {
+          for (var i = 1; i <= 400; i++) {
             this.snowFlakes.push({
               depth: this.randRange(1, 5),
               left: this.randRange(0, 97),
@@ -111,12 +146,21 @@ export class AppComponent {
         } else {
           for (var i = 0; i < 150; i++) {
             this.snowFlakes[i].speed = this.randRange(1, 5);
-            this.snowFlakes.splice(151, 100);
+            this.snowFlakes.splice(151, 400);
           }
         }
       }
 
       // change color
+      if (this.snowCustomConfig.snowColor != data.snowColor) {
+        this.snowCustomConfig.snowColor = data.snowColor;
+        for (var i = 0; i < this.snowFlakes.length; i++) {
+          this.snowFlakes[i].color = this.snowCustomConfig.snowColor;
+          this.snowFlakes[i].speed = this.snowCustomConfig.fastSpeed
+            ? 6
+            : this.randRange(1, 5);
+        }
+      }
     });
   }
 

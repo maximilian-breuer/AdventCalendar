@@ -15,6 +15,7 @@ import { SnowFlakeComponent } from './snow-flake.component';
 import { SecondPageComponent } from './components/second-page/second-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { SnowflakeService } from './services/snowflake.service';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SnowflakeService } from './services/snowflake.service';
     ReactiveFormsModule,
     NgxMasonryModule,
     NgbModule,
+    ColorPickerModule,
   ],
   providers: [SnowflakeService],
   bootstrap: [AppComponent],

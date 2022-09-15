@@ -26,7 +26,7 @@ import { Component } from '@angular/core';
           [style.height.px]="flakeSize"
           [style.left.vw]="startLeft"
           [style.top.px]="startTop"
-          [style.background.color]="color"
+          [style.background-color]="color"
           class="flake"
         >
         </span>
@@ -123,6 +123,10 @@ export class SnowFlakeComponent {
         this.flakeSize = 10;
         this.flakeOpacity = 0.2;
         break;
+    }
+
+    if (this.color != '#ffffff') {
+      this.flakeOpacity = 0.7;
     }
   }
 }

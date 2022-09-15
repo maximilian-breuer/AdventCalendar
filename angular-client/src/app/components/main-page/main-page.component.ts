@@ -47,8 +47,6 @@ export class MainPageComponent {
     });
 
     window.addEventListener('scroll', (event) => {
-      console.log('hkjlfdslk');
-
       // if completely scrolled up on desktop
       if (window.scrollY == 0 && window.innerWidth >= 1900) {
         this.snowFlakes = [];

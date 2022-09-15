@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { SnowCustomConfig } from 'src/app/app.component';
+import { Component } from '@angular/core';
 import { SnowflakeService } from 'src/app/services/snowflake.service';
 
 @Component({
@@ -7,12 +6,10 @@ import { SnowflakeService } from 'src/app/services/snowflake.service';
   templateUrl: './second-page.component.html',
   styleUrls: ['./second-page.component.scss'],
 })
-export class SecondPageComponent implements OnInit {
+export class SecondPageComponent {
   fastSnow = false;
   selectedColor = '#ffffff';
   constructor(private snowflakeService: SnowflakeService) {}
-
-  ngOnInit(): void {}
 
   speedChange() {
     this.fastSnow = !this.fastSnow;
