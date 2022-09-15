@@ -9,7 +9,10 @@ import { SnowflakeService } from 'src/app/services/snowflake.service';
 export class SecondPageComponent {
   fastSnow = false;
   selectedColor = '#ffffff';
-  constructor(private snowflakeService: SnowflakeService) {}
+  constructor(private snowflakeService: SnowflakeService) {
+    this.fastSnow = snowflakeService.getData().value.fastSpeed;
+    this.selectedColor = snowflakeService.getData().value.snowColor;
+  }
 
   speedChange() {
     this.fastSnow = !this.fastSnow;

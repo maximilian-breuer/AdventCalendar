@@ -39,11 +39,6 @@ export class AppComponent {
   ) {
     router.events.subscribe((evt) => {
       if (evt instanceof NavigationStart) {
-        // setTimeout(() => {
-        //   console.log('scroolll');
-        //   window.scrollTo(0, 0);
-        // }, 1000);
-        // document.querySelector('secondPage')!.scrollTop = 0;
         this.snowFlakes = [];
 
         for (var i = 1; i <= 150; i++) {
@@ -58,6 +53,7 @@ export class AppComponent {
             color: this.snowCustomConfig.snowColor,
           });
         }
+        window.scrollTo(0, 0);
       }
     });
 

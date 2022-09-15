@@ -8,7 +8,6 @@ import { LoginComponent } from './components/main-page/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CalendarDoorComponent } from './components/main-page/calendar-gallery/calendar-door/calendar-door.component';
 import { CalendarGalleryComponent } from './components/main-page/calendar-gallery/calendar-gallery.component';
-import { NgxMasonryModule } from 'ngx-masonry';
 import { ContentViewComponent } from './components/main-page/calendar-gallery/calendar-door/content-view/content-view.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SnowFlakeComponent } from './snow-flake.component';
@@ -33,7 +32,6 @@ import { ColorPickerModule } from 'ngx-color-picker';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    NgxMasonryModule,
     NgbModule,
     ColorPickerModule,
   ],

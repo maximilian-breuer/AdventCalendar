@@ -31,19 +31,18 @@
               <div class="col">
                 <h4>
                   Hier befindet sich ein Easter Egg. Benutze die Knöpfe, um das
-                  Aussehen die Schnelligkeit des Schnees beliebig zu verändern!
+                  Aussehen und die Schnelligkeit des Schnees beliebig zu
+                  verändern!
                 </h4>
               </div>
             </div>
             <div class="row justify-content-center">
-              <div class="col-sm-2 mb-2">
+              <div class="col-lg-4 mb-2">
                 <form action="">
                   <div class="form-group">
                     <input
                       class="form-control"
                       [(colorPicker)]="selectedColor"
-                      cpWidth="230px"
-                      cpHeight="100px"
                       value="Schneefarbe"
                       [style.background]="selectedColor"
                       (colorPickerClose)="colorChange()"
@@ -52,7 +51,7 @@
                   </div>
                 </form>
               </div>
-              <div class="col-sm-2 mb-2">
+              <div class="col-sm-4 mb-2">
                 <button
                   id="changeColor"
                   class="btn btn-primary"

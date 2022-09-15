@@ -41,7 +41,7 @@ export class MainPageComponent {
     }
 
     window.addEventListener('resize', (event) => {
-      if (window.innerWidth == screen.width) {
+      if (window.innerWidth == screen.width && !this.mobile) {
         window.scrollTo(0, 0);
       }
     });
