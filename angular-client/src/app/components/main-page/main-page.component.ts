@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
+import { LoginService } from 'src/app/services/login.service';
 
 interface SnowFlakeConfig {
   depth: number;
@@ -24,7 +25,10 @@ export class MainPageComponent {
 
   loginEvent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  constructor() {
+  constructor(private loginService: LoginService) {
+    if (loginService.loggedIn()) {
+      this.loginEvent.next(true);
+    }
     this.snowFlakes = [];
 
     for (var i = 1; i <= 150; i++) {

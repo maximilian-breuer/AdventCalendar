@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { LoginService } from 'src/app/services/login.service';
 import { loginInformation as LoginInformation } from '../../../../assets/assets';
 
 @Component({
@@ -13,7 +14,10 @@ export class LoginComponent implements OnInit {
 
   @Output() onLogin: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -24,6 +28,7 @@ export class LoginComponent implements OnInit {
     ) {
       this.loginForm.reset();
       this.onLogin.emit(true);
+      this.loginService.login();
     } else {
       this.displayError = true;
     }

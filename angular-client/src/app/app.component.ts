@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
 
 interface SnowFlakeConfig {
   depth: number;
@@ -21,8 +20,6 @@ export class AppComponent {
     );
 
   public snowFlakes: SnowFlakeConfig[];
-
-  loginEvent: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor() {
     this.snowFlakes = [];
@@ -76,10 +73,6 @@ export class AppComponent {
         });
       }
     });
-  }
-
-  handleLogin(event: boolean) {
-    this.loginEvent.next(event);
   }
 
   private randRange(min: number, max: number): number {

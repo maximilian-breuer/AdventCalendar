@@ -6,9 +6,25 @@
   text-align: center;
   border: 3px solid black;
   box-shadow: 0 5px 15px rgba(255, 255, 255, 0.8);
+
+  animation-delay: 0s;
+	animation-duration: 500ms;
+  animation-timing-function: linear;
+  animation-name: pop-up-animation;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+@keyframes pop-up-animation {
+	from {
+		transform: scale(0);
+    opacity: 0%;
+	}
+	to {
+		transform: scale(1) ;
+    opacity: 100%;
+	}
 }
