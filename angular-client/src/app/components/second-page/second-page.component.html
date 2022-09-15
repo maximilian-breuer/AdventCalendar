@@ -31,13 +31,19 @@
               <div class="col">
                 <h4>
                   Hier befindet sich ein Easter Egg. Benutze die Knöpfe, um das
-                  Aussehen des Schnees beliebig zu verändern!
+                  Aussehen die Schnelligkeit des Schnees beliebig zu verändern!
                 </h4>
               </div>
             </div>
             <div class="row">
               <div class="col mb-2">
-                <button class="btn btn-primary">Knopf</button>
+                <button
+                  id="changeColor"
+                  class="btn btn-primary"
+                  (click)="speedChange()"
+                >
+                  {{ fastSnow ? "Ruhig" : "Schneesturm" }}
+                </button>
               </div>
             </div>
           </div>

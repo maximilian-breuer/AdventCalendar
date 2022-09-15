@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SnowFlakeComponent } from './snow-flake.component';
 import { SecondPageComponent } from './components/second-page/second-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { SnowflakeService } from './services/snowflake.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     NgxMasonryModule,
     NgbModule,
   ],
-  providers: [],
+  providers: [SnowflakeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'snow-flake',
-  inputs: ['depth', 'speed', 'startLeft', 'startTop'],
+  inputs: ['depth', 'speed', 'startLeft', 'startTop', 'color'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./snow-flake.component.scss'],
   template: `
@@ -26,6 +26,7 @@ import { Component } from '@angular/core';
           [style.height.px]="flakeSize"
           [style.left.vw]="startLeft"
           [style.top.px]="startTop"
+          [style.background.color]="color"
           class="flake"
         >
         </span>
@@ -37,7 +38,7 @@ export class SnowFlakeComponent {
   public depth: number;
   public speed: number;
   public startLeft: number;
-
+  public color: string;
   public startTop: number;
 
   public flakeOpacity: number;
@@ -52,6 +53,7 @@ export class SnowFlakeComponent {
     this.depth = 1;
     this.speed = 1;
     this.startLeft = 0;
+    this.color = '#ffffff';
 
     this.flakeOpacity = 1;
     this.flakeSize = 1;
@@ -90,6 +92,9 @@ export class SnowFlakeComponent {
         this.verticalDuration = 15;
         this.horizontalDuration = 5;
         break;
+      case 6:
+        // for fast snow
+        this.verticalDuration = 2;
     }
 
     // Choose a random offset for the animation so that we fill the screen with snow
