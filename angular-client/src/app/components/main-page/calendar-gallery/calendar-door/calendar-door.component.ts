@@ -14,7 +14,8 @@ export class CalendarDoorComponent implements OnInit {
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
-    this.open = new Date().getUTCDate() >= this.content.day ? true : false;
+    // this.open = new Date().getUTCDate() >= this.content.day ? true : false;
+    this.open = 14 >= this.content.day ? true : false;
   }
 
   openDoor(contentModal: any) {
