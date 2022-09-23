@@ -139,7 +139,6 @@ export class AppComponent {
           for (var i = 0; i < this.getNumberOfFlakes(); i++) {
             this.snowFlakes[i].speed = 6;
           }
-          console.log('jklf');
         } else {
           for (var i = 0; i < 150; i++) {
             this.snowFlakes[i].speed = this.randRange(1, 5);
