@@ -1,7 +1,7 @@
 import { ContentImage, Gift } from './interfaces';
 
 export const loginInformation = {
-  password: 'Christina',
+  password: '1234',
 };
 
 // calendar doors
@@ -12,8 +12,7 @@ gifts[0] = {
   content: new ContentImage(
     './../../../assets/calendar-images/Hintergrundbild.png'
   ),
-  caption:
-    'Schau mal in die Kiste auf dem Schrank (siehe Bild). Die heutige Ueberraschung befindet sich dort drinn. Viel Spass damit und einen schoenen Tag!',
+  caption: 'Example caption of an example picture!',
   width: 10,
   height: 10,
 };

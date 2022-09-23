@@ -15,7 +15,7 @@ interface SnowFlakeConfig {
   styleUrls: ['./main-page.component.scss'],
 })
 export class MainPageComponent {
-  title = 'Christinas Adventskalender';
+  title = 'Advent Calendar';
   mobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent

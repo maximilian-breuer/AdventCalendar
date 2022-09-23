@@ -21,7 +21,7 @@ export interface SnowCustomConfig {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Christinas Adventskalender';
+  title = 'Advent Calendar';
   mobile =
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent

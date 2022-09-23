@@ -1,7 +1,7 @@
 <div class="container">
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <h3>Bist du Christina?</h3>
+      <h3>Is this the right person?</h3>
       <div class="row justify-content-center">
         <div class="col-8">
           <input
@@ -9,10 +9,10 @@
             id="password"
             type="password"
             formControlName="password"
-            placeholder="Passwort"
+            placeholder="Mobile first design"
           />
           <span *ngIf="displayError" style="font-size: x-small; color: red"
-            >Bitte richtiges Passwort eingeben</span
+            >For sample login: use "1234"</span
           >
         </div>
       </div>
